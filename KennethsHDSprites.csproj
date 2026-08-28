@@ -1,13 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <LangVersion>latest</LangVersion>
     <AssemblyName>KennethsHDSprites</AssemblyName>
-    <RootNamespace>KennethsHDSprites</RootNamespace>
+    <LangVersion>latest</LangVersion>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Pathoschild.Stardew.ModBuildConfig" Version="4.1.2" PrivateAssets="all" />
+    <PackageReference Include="Pathoschild.SMAPI" Version="4.0.0" ExcludeAssets="runtime" PrivateAssets="all" />
+    <PackageReference Include="HarmonyLib" Version="2.2.2" PrivateAssets="all" />
+    <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.5.1.1679" ExcludeAssets="runtime" PrivateAssets="all" />
   </ItemGroup>
 </Project>
