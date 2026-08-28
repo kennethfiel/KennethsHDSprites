@@ -1,0 +1,17 @@
+name: Build DLL
+on: [push, workflow_dispatch]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 6.0.x
+      - run: dotnet build KennethsHDSprites.csproj -c Release
+      - uses: actions/upload-artifact@v4
+        with:
+          name: KennethsHDSprites-mod
+          path: |
+            bin/Release/net6.0/KennethsHDSprites.dll
+            manifest.json
