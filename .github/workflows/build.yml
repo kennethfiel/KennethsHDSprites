@@ -8,7 +8,10 @@ jobs:
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 6.0.x
-      - run: dotnet build KennethsHDSprites.csproj -c Release
+      - name: Build with fake game path
+        run: |
+          mkdir -p /tmp/fake-game
+          dotnet build KennethsHDSprites.csproj -c Release /p:GamePath=/tmp/fake-game /p:EnableHarmony=false
       - uses: actions/upload-artifact@v4
         with:
           name: KennethsHDSprites-mod
