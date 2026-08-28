@@ -1,20 +1,25 @@
 name: Build DLL
-on: [push, workflow_dispatch]
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-dotnet@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 6.0.x
-      - name: Build with fake game path
-        run: |
-          mkdir -p /tmp/fake-game
-          dotnet build KennethsHDSprites.csproj -c Release /p:GamePath=/tmp/fake-game /p:EnableHarmony=false
-      - uses: actions/upload-artifact@v4
+      - name: Build
+        run: dotnet build KennethsHDSprites/KennethsHDSprites.csproj -c Release -o ./build
+      - name: Upload DLL
+        uses: actions/upload-artifact@v4
         with:
           name: KennethsHDSprites-mod
           path: |
-            bin/Release/net6.0/KennethsHDSprites.dll
-            manifest.json
+            ./build/KennethsHDSprites.dll
+            ./KennethsHDSprites/manifest.json
