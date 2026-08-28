@@ -2,17 +2,10 @@
   "Name": "Kenneth's HD Sprites",
   "Author": "KennethFiel",
   "Version": "1.0.0",
-  "Description": "HD Sprite framework by Kenneth - supports 16x16, 32x32, 48x48, 64x64. From 32 to 64, all sharp! For Fruit Shop, Restaurant & more.",
+  "Description": "HD Sprite framework - supports 32,48,64. By Kenneth.",
   "UniqueID": "KennethFiel.KennethsHDSprites",
   "EntryDll": "KennethsHDSprites.dll",
   "MinimumApiVersion": "4.0.0",
-  "UpdateKeys": [
-    "Nexus:XXXX"
-  ],
-  "Dependencies": [
-    {
-      "UniqueID": "Pathoschild.ContentPatcher",
-      "IsRequired": true
-    }
-  ]
+  "UpdateKeys": [],
+  "Dependencies": []
 }
